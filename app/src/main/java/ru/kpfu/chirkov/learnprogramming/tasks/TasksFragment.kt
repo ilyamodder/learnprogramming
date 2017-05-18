@@ -15,8 +15,8 @@ import ru.kpfu.chirkov.learnprogramming.base.BaseFragment
  */
 class TasksFragment : BaseFragment(), TasksView {
 
-    private val presenter: TaskPresenter =
-            TaskPresenter(this, LoaderLifecycleHandler.create(activity, loaderManager))
+    private val presenter: TasksPresenter =
+            TasksPresenter(this, LoaderLifecycleHandler.create(activity, loaderManager))
 
     override fun showLoading() {
         swipeRefreshLayout.isRefreshing = true
@@ -37,6 +37,7 @@ class TasksFragment : BaseFragment(), TasksView {
     override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         recyclerView.layoutManager = LinearLayoutManager(activity)
+        presenter.init()
     }
 
     override fun getLayoutId(): Int {
