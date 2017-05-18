@@ -6,7 +6,7 @@ import ru.kpfu.chirkov.learnprogramming.data.api.ApiFactory
 /**
  * @author ilya
  */
-class TaskPresenter(val view: TasksView, val lifecycleHandler: LifecycleHandler) {
+class TasksPresenter(val view: TasksView, val lifecycleHandler: LifecycleHandler) {
     fun init() {
         ApiFactory.getLearnProgrammingService()
                 .getPosts()
