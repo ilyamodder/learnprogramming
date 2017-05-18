@@ -1,4 +1,4 @@
-package ru.kpfu.chirkov.learnprogramming.tasks
+package ru.kpfu.chirkov.learnprogramming.screens.tasks
 
 import ru.kpfu.chirkov.learnprogramming.base.BaseView
 

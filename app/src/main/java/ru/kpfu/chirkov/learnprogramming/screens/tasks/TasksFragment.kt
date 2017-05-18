@@ -1,4 +1,4 @@
-package ru.kpfu.chirkov.learnprogramming.tasks
+package ru.kpfu.chirkov.learnprogramming.screens.tasks
 
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager

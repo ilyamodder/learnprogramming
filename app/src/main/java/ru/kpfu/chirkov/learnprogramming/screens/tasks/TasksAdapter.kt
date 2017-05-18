@@ -1,4 +1,4 @@
-package ru.kpfu.chirkov.learnprogramming.tasks
+package ru.kpfu.chirkov.learnprogramming.screens.tasks
 
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
