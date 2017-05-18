@@ -13,6 +13,9 @@ android {
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         vectorDrawables.useSupportLibrary= true
+
+        buildConfigField "String", "HACKERONE_API_ENDPOINT", '"http://localhost"'
+        buildConfigField "String", "MAIN_API_ENDPOINT", '"http://localhost"'
     }
     buildTypes {
         release {
@@ -31,6 +34,12 @@ dependencies {
     compile 'com.android.support:design:25.3.1'
     compile 'com.android.support:support-vector-drawable:25.3.1'
     compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+    compile 'io.reactivex:rxjava:1.3.0'
+    compile 'com.google.code.gson:gson:2.8.0'
+    compile 'com.squareup.retrofit2:retrofit:2.3.0'
+    compile 'com.squareup.retrofit2:converter-gson:2.3.0'
+    compile 'com.squareup.retrofit2:adapter-rxjava:2.3.0'
+    compile "ru.arturvasilov:rx-loader:0.1.4"
     testCompile 'junit:junit:4.12'
 }
 repositories {
