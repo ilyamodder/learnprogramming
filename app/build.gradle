@@ -46,3 +46,13 @@ dependencies {
 repositories {
     mavenCentral()
 }
+
+configurations.all {
+    resolutionStrategy {
+        eachDependency { DependencyResolveDetails details ->
+            if (details.requested.group == 'io.reactivex' && details.requested.name == 'rxjava') {
+                details.useVersion "1.2.2"
+            }
+        }
+    }
+}
