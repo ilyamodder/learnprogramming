@@ -11,21 +11,26 @@ class TasksPresenter(val view: TasksView, val lifecycleHandler: LifecycleHandler
     fun init() {
         ApiFactory.getLearnProgrammingService()
                 .getPosts()
-                .doOnSubscribe { view.showLoading() }
-                .doOnTerminate { view::hideLoading }
-                .compose(lifecycleHandler.load(0))
                 .map {
                     val list = ArrayList<Any>()
-                    for ((key, value) in it.mapping) {
-                        list.add(it.categories.find { it.id == key } ?: throw NullPointerException())
-                        for (id in value) {
-                            list.add(it.categories.find { it.id == id } ?: throw NullPointerException())
+                    it.mapping.forEach { (key, value) ->
+                        list.add(it.categories.find { it.id == key }
+                                ?: throw NullPointerException("category $key not found"))
+                        value.mapTo(list) { id ->
+                            it.tasks.find { it.id == id }
+                                    ?: throw NullPointerException("task $id not found")
                         }
                     }
                     return@map list
                 }
+                .doOnSubscribe { view.showLoading() }
+                .doOnTerminate { view.hideLoading() }
                 .addSchedulers()
-                .subscribe(view::showTasks, {
+                .compose(lifecycleHandler.load(0))
+                .subscribe({
+                    view.showTasks(it)
+                }, {
+                    it.printStackTrace()
                     view.showError(it.localizedMessage)
                 })
     }
