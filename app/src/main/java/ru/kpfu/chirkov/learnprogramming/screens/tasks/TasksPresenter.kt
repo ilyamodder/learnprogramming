@@ -1,6 +1,7 @@
 package ru.kpfu.chirkov.learnprogramming.screens.tasks
 
 import ru.arturvasilov.rxloader.LifecycleHandler
+import ru.kpfu.chirkov.learnprogramming.R
 import ru.kpfu.chirkov.learnprogramming.addSchedulers
 import ru.kpfu.chirkov.learnprogramming.data.api.ApiFactory
 
@@ -23,10 +24,10 @@ class TasksPresenter(val view: TasksView, val lifecycleHandler: LifecycleHandler
                     }
                     return@map list
                 }
+                .addSchedulers()
                 .doOnSubscribe { view.showLoading() }
                 .doOnTerminate { view.hideLoading() }
-                .addSchedulers()
-                .compose(lifecycleHandler.load(0))
+                .compose(lifecycleHandler.load(R.id.tasks_loader))
                 .subscribe({
                     view.showTasks(it)
                 }, {

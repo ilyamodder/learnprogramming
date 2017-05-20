@@ -10,7 +10,5 @@ import rx.schedulers.Schedulers
  */
 
 fun <T> Observable<T>.addSchedulers(): Observable<T> {
-    subscribeOn(Schedulers.io())
-    observeOn(AndroidSchedulers.mainThread())
-    return this
+    return subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread())
 }

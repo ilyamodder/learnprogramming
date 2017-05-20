@@ -37,7 +37,9 @@ class TasksFragment : BaseFragment(), TasksView {
         super.onViewCreated(view, savedInstanceState)
         recyclerView.layoutManager = LinearLayoutManager(activity)
         presenter = TasksPresenter(this, LoaderLifecycleHandler.create(activity, loaderManager))
-        presenter.init()
+        if (savedInstanceState == null) {
+            presenter.init()
+        }
     }
 
     override fun getLayoutId(): Int {

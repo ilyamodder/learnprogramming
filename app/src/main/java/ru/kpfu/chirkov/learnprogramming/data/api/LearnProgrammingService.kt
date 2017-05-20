@@ -9,6 +9,6 @@ import rx.Observable
  */
 
 interface LearnProgrammingService {
-    @GET("posts")
+    @GET("tasks")
     fun getPosts(): Observable<TasksResponse>
 }
