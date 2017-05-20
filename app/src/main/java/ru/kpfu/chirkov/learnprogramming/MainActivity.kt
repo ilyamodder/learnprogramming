@@ -38,6 +38,7 @@ class MainActivity : AppCompatActivity() {
             transaction.commit()
             true
         }
+        navigation.selectedItemId = R.id.navigation_tasks
     }
 
 }
