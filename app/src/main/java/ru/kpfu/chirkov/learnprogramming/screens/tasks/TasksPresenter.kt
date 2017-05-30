@@ -4,14 +4,14 @@ import ru.arturvasilov.rxloader.LifecycleHandler
 import ru.kpfu.chirkov.learnprogramming.R
 import ru.kpfu.chirkov.learnprogramming.addSchedulers
 import ru.kpfu.chirkov.learnprogramming.base.ListItem
-import ru.kpfu.chirkov.learnprogramming.data.api.ApiFactory
+import ru.kpfu.chirkov.learnprogramming.data.repository.LearnProgrammingRepositoryProvider
 
 /**
  * @author ilya
  */
 class TasksPresenter(val view: TasksView, val lifecycleHandler: LifecycleHandler) {
     fun init() {
-        ApiFactory.getLearnProgrammingService()
+        LearnProgrammingRepositoryProvider.learnProgrammingRepository
                 .getTasks()
                 .map {
                     val list = ArrayList<ListItem>()
