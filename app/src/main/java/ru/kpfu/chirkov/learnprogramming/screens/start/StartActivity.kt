@@ -39,6 +39,7 @@ class StartActivity : AppCompatActivity() {
                 button("Начать").lparams {
                     centerHorizontally()
                     bottomMargin = dip(56)
+                    alignParentBottom()
                 }.setOnClickListener {
                     toast("Click")
                 }

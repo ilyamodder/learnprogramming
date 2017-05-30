@@ -19,6 +19,7 @@ class LearnProgrammingRepositoryImpl : LearnProgrammingRepository {
             Hawk.get<Boolean>("showed_start_screen", false)
         }.map {
             Hawk.put("showed_start_screen", true)
+            it
         }
     }
 
