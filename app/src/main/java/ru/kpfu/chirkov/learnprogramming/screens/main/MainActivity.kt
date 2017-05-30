@@ -1,9 +1,10 @@
-package ru.kpfu.chirkov.learnprogramming
+package ru.kpfu.chirkov.learnprogramming.screens.main
 
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v7.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
+import ru.kpfu.chirkov.learnprogramming.R
 import ru.kpfu.chirkov.learnprogramming.screens.dashboard.DashboardFragment
 import ru.kpfu.chirkov.learnprogramming.screens.tasks.TasksFragment
 import ru.kpfu.chirkov.learnprogramming.screens.theory_list.TheoryListFragment
