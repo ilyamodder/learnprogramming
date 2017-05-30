@@ -22,8 +22,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".screens.start.StartActivity"
-            android:theme="@style/FullscreenTheme">
+            android:name=".screens.start.StartActivity">
         </activity>
     </application>
 
