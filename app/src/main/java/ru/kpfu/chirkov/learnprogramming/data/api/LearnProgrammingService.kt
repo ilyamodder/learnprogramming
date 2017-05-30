@@ -2,6 +2,7 @@ package ru.kpfu.chirkov.learnprogramming.data.api
 
 import retrofit2.http.GET
 import ru.kpfu.chirkov.learnprogramming.data.model.TasksResponse
+import ru.kpfu.chirkov.learnprogramming.data.model.TheoryListResponse
 import rx.Observable
 
 /**
@@ -10,5 +11,8 @@ import rx.Observable
 
 interface LearnProgrammingService {
     @GET("tasks")
-    fun getPosts(): Observable<TasksResponse>
+    fun getTasks(): Observable<TasksResponse>
+
+    @GET("theory")
+    fun getTheory(): Observable<TheoryListResponse>
 }

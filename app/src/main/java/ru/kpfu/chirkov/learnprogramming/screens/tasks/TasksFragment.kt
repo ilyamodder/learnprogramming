@@ -3,12 +3,12 @@ package ru.kpfu.chirkov.learnprogramming.screens.tasks
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
 import android.view.View
-import android.widget.Toast
-import android.widget.Toast.LENGTH_SHORT
-import kotlinx.android.synthetic.main.fragment_task.*
+import kotlinx.android.synthetic.main.fragment_list.*
 import ru.arturvasilov.rxloader.LoaderLifecycleHandler
 import ru.kpfu.chirkov.learnprogramming.R
 import ru.kpfu.chirkov.learnprogramming.base.BaseFragment
+import ru.kpfu.chirkov.learnprogramming.base.CategoriesListAdapter
+import ru.kpfu.chirkov.learnprogramming.base.ListItem
 
 /**
  * @author ilya
@@ -25,12 +25,8 @@ class TasksFragment : BaseFragment(), TasksView {
         swipeRefreshLayout.isRefreshing = false
     }
 
-    override fun showError(error: String) {
-        Toast.makeText(activity, error, LENGTH_SHORT).show()
-    }
-
-    override fun showTasks(list: List<Any>) {
-        recyclerView.adapter = TasksAdapter(list)
+    override fun showTasks(list: List<ListItem>) {
+        recyclerView.adapter = CategoriesListAdapter(list)
     }
 
     override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
@@ -43,6 +39,6 @@ class TasksFragment : BaseFragment(), TasksView {
     }
 
     override fun getLayoutId(): Int {
-        return R.layout.fragment_task
+        return R.layout.fragment_list
     }
 }
