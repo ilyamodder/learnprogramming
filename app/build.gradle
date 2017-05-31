@@ -14,8 +14,9 @@ android {
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         vectorDrawables.useSupportLibrary = true
 
-        buildConfigField "String", "HACKERONE_API_ENDPOINT", '"http://localhost"'
+        buildConfigField "String", "HACKERONE_API_ENDPOINT", '"http://api.hackerrank.com"'
         buildConfigField "String", "MAIN_API_ENDPOINT", '"http://192.168.1.201:3000"'
+        buildConfigField "String", "HACKERONE_API_KEY", '"hackerrank|2630080-1470|4ca044e94c9be09b983fb8d5722ac6144ca991a1"'
     }
     buildTypes {
         release {

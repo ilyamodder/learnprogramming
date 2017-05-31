@@ -24,7 +24,9 @@
         <activity
             android:name=".screens.start.StartActivity">
         </activity>
-        <activity android:name=".screens.task.TaskActivity"/>
+        <activity
+            android:name=".screens.task.TaskActivity"
+            android:label="@string/title_task"/>
     </application>
 
 </manifest>

@@ -2,6 +2,7 @@
 <resources>
     <item name="tasks_loader" type="id"/>
     <item name="task_loader" type="id"/>
+    <item name="task_check_loader" type="id"/>
     <item name="theory_loader" type="id"/>
     <item name="show_start_screen_loader" type="id"/>
 </resources>

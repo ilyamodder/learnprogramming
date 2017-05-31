@@ -8,4 +8,8 @@ import ru.kpfu.chirkov.learnprogramming.data.model.TaskResponse
  */
 interface TaskView : BaseView {
     fun showTask(task: TaskResponse)
+    fun showProgressDialog()
+    fun hideProgressDialog()
+    fun showErrorMessage(error: String)
+    fun showSuccess()
 }
