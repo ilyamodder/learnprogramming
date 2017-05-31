@@ -24,6 +24,7 @@
         <activity
             android:name=".screens.start.StartActivity">
         </activity>
+        <activity android:name=".screens.task.TaskActivity"/>
     </application>
 
 </manifest>

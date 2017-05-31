@@ -9,6 +9,7 @@ import ru.kpfu.chirkov.learnprogramming.R
 import ru.kpfu.chirkov.learnprogramming.base.BaseFragment
 import ru.kpfu.chirkov.learnprogramming.base.CategoriesListAdapter
 import ru.kpfu.chirkov.learnprogramming.base.ListItem
+import ru.kpfu.chirkov.learnprogramming.data.model.TheoryResponse
 
 /**
  * @author ilya
@@ -37,6 +38,10 @@ class TheoryListFragment : BaseFragment(), TheoryListView {
     }
 
     override fun showTheoryList(list: List<ListItem>) {
-        recyclerView.adapter = CategoriesListAdapter(list)
+        recyclerView.adapter = CategoriesListAdapter<TheoryResponse>(list, this::onItemClick)
+    }
+
+    fun onItemClick(theory: TheoryResponse) {
+
     }
 }

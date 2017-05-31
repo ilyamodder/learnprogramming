@@ -1,5 +1,6 @@
 package ru.kpfu.chirkov.learnprogramming.data.repository
 
+import ru.kpfu.chirkov.learnprogramming.data.model.TaskResponse
 import ru.kpfu.chirkov.learnprogramming.data.model.TasksResponse
 import ru.kpfu.chirkov.learnprogramming.data.model.TheoryListResponse
 import rx.Observable
@@ -13,4 +14,6 @@ interface LearnProgrammingRepository {
     fun getTheory(): Observable<TheoryListResponse>
 
     fun getShowStartScreen(): Observable<Boolean>
+
+    fun getTask(id: Long): Observable<TaskResponse>
 }

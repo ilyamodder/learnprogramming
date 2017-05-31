@@ -11,10 +11,14 @@ import ru.kpfu.chirkov.learnprogramming.data.model.CategoryResponse
 /**
  * @author ilya
  */
-class CategoriesListAdapter(val list: List<ListItem>) : RecyclerView.Adapter<CategoriesListAdapter.ItemViewHolder>() {
+class CategoriesListAdapter<in T>(val list: List<ListItem>, val clickListener: (T) -> Unit)
+    : RecyclerView.Adapter<CategoriesListAdapter.ItemViewHolder>() {
 
     override fun onBindViewHolder(holder: ItemViewHolder?, position: Int) {
         holder?.bind(list[position])
+        if (getItemViewType(position) != 1) {
+            holder?.itemView?.setOnClickListener { clickListener.invoke(list[position] as T) }
+        }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup?, viewType: Int): ItemViewHolder {
